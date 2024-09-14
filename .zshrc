@@ -1,7 +1,3 @@
-# CodeWhisperer pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
-# If you come from bash you might have to change your $PATH.
-
 # Plugins
 plugins=(
   git
@@ -18,18 +14,17 @@ eval "$(zoxide init --cmd cd zsh)"
 export TERM=xterm-256color
 
 # User configuration
-alias ls='exa --icons --classify --color=always --group-directories-first'
-alias ll='exa -alF --icons --classify --color=always --group-directories-first'
-alias la='exa -a --icons classify --color=always --group-directories-first'
-alias l='exa -F --icons --classify --color=always --group-directories-first'
-alias l.='exa -a | egrep "^\."'
+alias ls='eza --icons --classify --color=always --group-directories-first'
+alias ll='eza -alF --icons --classify --color=always --group-directories-first'
+alias la='eza -a --icons classify --color=always --group-directories-first'
+alias l='eza -F --icons --classify --color=always --group-directories-first'
+alias l.='eza -a | egrep "^\."'
 
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 
 alias cat='bat'
-alias copy='pbcopy'
 
 alias c=clear
 alias s='source ~/.zshrc'
@@ -37,14 +32,14 @@ alias e=exit
 
 alias a='sh ~/.ssh/gum_ssh.sh'
 
+alias open='gnome-open'
+
 #creating directories alias
 function take {
   mkdir -p $1
   cd $1
 }
 
-alias gs='function _search(){ open "https://www.google.com/search?q=$*"; };_search'
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
-# CodeWhisperer post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
