@@ -51,11 +51,10 @@ palette = 'theme'
 
 # Defines the colour palette for the theme
 [palettes.theme]
-bar_one = '#81a1c1'
-# bar_two = '#6992D7'
-bar_two = '#5e81ac'
-bar_three = '#394260'
-bar_four = '#212736'
+bar_one = '#FDA172'
+bar_two = '#ED7014'
+bar_three = '#BE5504'
+bar_four = '#8D4004'
 bar_five = '#1D2230'
 text_one = '#090C0C'
 text_two = '#EEEEEE'
@@ -149,7 +148,7 @@ style = 'bold fg:text_two bg:bar_two'
 symbol = '  '
 
 [directory.substitutions]
-'Documents' = ''
+'Documents' = '󰈙'
 'Downloads' = ' '
 'Music' = ' '
 'Pictures' = ' '

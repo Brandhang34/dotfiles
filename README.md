@@ -24,7 +24,7 @@ but I find it easier to create symlinks.
 ## Installation:
 First, clone dotfiles repo in your $HOME directory
 ```
-$ git clone git@github $HOME/dotfiles
+$ git clone git@github.com:Brandhang34/dotfiles.git $HOME/dotfiles
 $ cd $HOME/dotfiles
 ```
 
