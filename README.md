@@ -7,6 +7,7 @@ in the .zshrc file could be different depending on the operating systems.
 Ensure you have the following installed on your system
 
 ### Terminal Tooling:
+- [kitty terminal](https://github.com/kovidgoyal/kitty) : Terminal Emulator
 - [helix](https://github.com/helix-editor/helix) : Text editor
 - [tmux](https://github.com/tmux/tmux) : Terminal Multiplexer
 - [zoxide](https://github.com/ajeetdsouza/zoxide) : Smart change directory
