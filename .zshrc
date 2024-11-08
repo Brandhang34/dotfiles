@@ -34,6 +34,20 @@ alias s='source ~/.zshrc'
 alias e=exit
 
 alias a='sh ~/.ssh/gum_ssh.sh'
+alias awsacc='sh ~/.aws/aws_acc.sh'
+
+# export AWS_PROFILE=default
+
+# alias awp="echo -e 'AWS_PROFILE='\$AWS_PROFILE'\n' && grep '\[profile ' ~/.aws/config | sed 's/\[profile //;s/\]//' && echo -e '\nset-awp \$1 to change'"
+
+# set-awp() {
+#     if [ -z "$1" ]; then
+#         echo "Please provide a profile name (current profile = ${AWS_PROFILE})"
+#     else
+#         export AWS_PROFILE="$1"
+#         echo "Switched to AWS profile: $AWS_PROFILE"
+#     fi
+# }
 
 alias open='gnome-open'
 
@@ -49,3 +63,5 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Created by `pipx` on 2024-09-17 01:37:18
 export PATH="$PATH:/home/sushamae/.local/bin"
+
+source /home/sushamae/.config/broot/launcher/bash/br

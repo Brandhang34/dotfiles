@@ -22,3 +22,9 @@ C-r = ":config-reload"
 # Use system clipboard
 p = "paste_clipboard_before"
 y = "yank_main_selection_to_clipboard"
+
+[keys.normal.space.","]
+e = ":sh $HOME/.config/helix/helix-tmux.sh explorer"
+t = ":sh $HOME/.config/helix/helix-tmux.sh terminal"
+g = ":sh $HOME/.config/helix/helix-tmux.sh tgpt"
+
