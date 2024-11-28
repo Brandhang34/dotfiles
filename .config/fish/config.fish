@@ -1,7 +1,8 @@
+# Launch Zellij on startup
 if status is-interactive
-    # Commands to run in interactive sessions can go here
-
+    eval (zellij setup --generate-auto-start fish | string collect)
 end
+
 # Disable Welcome Prompt
 set fish_greeting
 
@@ -12,8 +13,8 @@ zoxide init fish | source
 
 # Exports
 set -U fish_user_paths /usr/local/go/bin $fish_user_paths
-set -U fish_user_paths /home/sushamae/go/bin $fish_user_paths
-set -U fish_user_paths /home/sushamae/.local/bin $fish_user_paths
+set -U fish_user_paths ~/go/bin $fish_user_paths
+set -U fish_user_paths ~/.local/bin $fish_user_paths
 
 # User Configuration
 alias cd=z
@@ -40,13 +41,7 @@ alias awsacc='sh ~/.aws/aws_acc.sh'
 alias open='gnome-open'
 
 function take
-    mkdir -p $1
-    cd $1
+    mkdir -p $argv && cd $argv
 end
 
-
-# if test -z "$TMUX"
-#     tmux attach || exec tmux new-session && exit
-# end
-
-# source /home/sushamae/.config/broot/launcher/bash/br
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

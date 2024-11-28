@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# This script utilizes gum to present a selection of hosts to ssh to.
+# Assuming the ~/.ssh/config is configured properly with hosts, after
+# making a selection, the ssh command will be executed.
+
 function getSSHConfigs() {
   gum choose $(grep -P "^Host ([^*]+)$" "$HOME/.ssh/config" | sed 's/Host //') --selected.background "10" --cursor.foreground "10"
 }

@@ -1,4 +1,12 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
+mirror_session false
+styled_underlines true
+pane_frames false
+auto_layout true
+simplified_ui true
+default_shell "fish"
+scroll_buffer_size 1000000
+
 keybinds {
     normal {
         // uncomment this and adjust key if using copy_on_select=false
@@ -148,6 +156,7 @@ keybinds {
         bind "Ctrl g" { SwitchToMode "Locked"; }
         bind "Ctrl q" { Quit; }
         bind "Alt n" { NewPane; }
+        bind "Alt t" { NewTab; }
         bind "Alt i" { MoveTab "Left"; }
         bind "Alt o" { MoveTab "Right"; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
@@ -216,7 +225,7 @@ plugins {
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
-//
+
 // default_shell "fish"
 
 // Choose the path to override cwd that zellij will use for opening new panes
@@ -260,60 +269,21 @@ plugins {
 // For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
 // Once these themes are defined, one of them should to be selected in the "theme" section of this file
 //
-themes {
-    dracula {
-        fg 248 248 242
-        bg 40 42 54
-        red 255 85 85
-        green 80 250 123
-        yellow 241 250 140
-        blue 98 114 164
-        magenta 255 121 198
-        orange 255 184 108
-        cyan 139 233 253
-        black 0 0 0
-        white 255 255 255
-    }
-    one-dark {
-        fg "#ABB2BF"
-        bg "#333333"
-        red "#E06C75"
-        green "#98C379"
-        yellow "#E5C07B"
-        blue "#61AFEF"
-        magenta "#C678DD"
-        orange "#D08770"
-        cyan "#56B6C2"
-        black "#282C34"
-        white "#ABB2BF"
-    }
-    gruvbox-light {
- 		fg 60 56 54
-        bg 251 82 75
-        black 40 40 40
-        red 205 75 69
-        green 152 151 26
-        yellow 215 153 33
-        blue 69 133 136
-        magenta 177 98 134
-        cyan 104 157 106
-        white 213 196 161
-        orange 214 93 14
- 	}
- 	nord {
-        fg "#D8DEE9"
-        bg "#2E3440"
-        black "#3B4252"
-        red "#BF616A"
-        green "#A3BE8C"
-        yellow "#EBCB8B"
-        blue "#81A1C1"
-        magenta "#B48EAD"
-        cyan "#88C0D0"
-        white "#E5E9F0"
-        orange "#D08770"
-    }
-}
+// themes {
+//     dracula {
+//         fg 248 248 242
+//         bg 40 42 54
+//         red 255 85 85
+//         green 80 250 123
+//         yellow 241 250 140
+//         blue 98 114 164
+//         magenta 255 121 198
+//         orange 255 184 108
+//         cyan 139 233 253
+//         black 0 0 0
+//         white 255 255 255
+//     }
+// }
 
 // Choose the theme that is specified in the themes section.
 // Default: default
@@ -344,8 +314,8 @@ themes {
 // buffer. Excess number of lines are discarded in a FIFO fashion.
 // Valid values: positive integers
 // Default value: 10000
-//
-// scroll_buffer_size 10000
+
+// scroll_buffer_size 1000000
 
 // Provide a command to execute when copying text. The text will be piped to
 // the stdin of the program to perform the copy. This can be used with

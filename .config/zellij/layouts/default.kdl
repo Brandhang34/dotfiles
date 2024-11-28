@@ -1,0 +1,44 @@
+layout {
+    pane split_direction="vertical" {
+        pane
+    }
+
+    pane size=1 borderless=true {
+        plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+            
+            format_left    "#[fg=black,bg=#FDA172,bold] {mode}"
+            format_center  "{tabs}"
+            format_right   "#[bg=#212733,fg=#FDA172]{datetime}"
+            format_space   "#[bg=#212733]"
+
+            hide_frame_except_for_search "true"
+
+            mode_normal        "#[fg=black,bg=#FDA172,bold] {name}#[fg=#FDA172,bg=#212733] "
+            mode_locked        "#[fg=#A3AED2,bg=#8D4004,bold] {name}#[fg=#8D4004,bg=#212733]"
+            mode_resize        "#[fg=#A3AED2,bg=#8D4004,bold] {name}#[fg=#8D4004,bg=#212733]"
+            mode_pane          "#[fg=#A3AED2,bg=#8D4004,bold] {name}#[fg=#8D4004,bg=#212733]"
+            mode_tab           "#[fg=#A3AED2,bg=#8D4004,bold] {name}#[fg=#8D4004,bg=#212733]"
+            mode_scroll        "#[fg=#A3AED2,bg=#8D4004,bold] {name}#[fg=#8D4004,bg=#212733]"
+            mode_enter_search  "#[fg=#A3AED2,bg=#8D4004,bold] {name}#[fg=#8D4004,bg=#212733]"
+            mode_search        "#[fg=#A3AED2,bg=#8D4004,bold] {name}#[fg=#8D4004,bg=#212733]"
+            mode_rename_tab    "#[fg=#A3AED2,bg=#8D4004,bold] {name}#[fg=#8D4004,bg=#212733]"
+            mode_rename_pane   "#[fg=#A3AED2,bg=#8D4004,bold] {name}#[fg=#8D4004,bg=#212733]"
+            mode_session       "#[fg=#A3AED2,bg=#8D4004,bold] {name}#[fg=#8D4004,bg=#212733]"
+            mode_move          "#[fg=#A3AED2,bg=#8D4004,bold] {name}#[fg=#8D4004,bg=#212733]"
+            mode_prompt        "#[fg=#A3AED2,bg=#8D4004,bold] {name}#[fg=#8D4004,bg=#212733]"
+            mode_tmux          "#[fg=#A3AED2,bg=#8D4004,bold] {name}#[fg=#8D4004,bg=#212733]"
+            
+            tab_normal              "#[fg=#4C4C59,bg=#212733]#[fg=#000000,bg=#4C4C59]{index}{name}#[fg=#4C4C59,bg=#212733]"
+            tab_normal_fullscreen   "#[fg=#6C7086,bg=#ED7014] {index} {name} [] "
+            tab_normal_sync         "#[fg=#6C7086,bg=#ED7014] {index} {name} <> "
+            tab_active              "#[fg=#ED7014, bg=#212733]#[fg=#EEEEEE,bg=#ED7014]{index}{name}#[fg=#ED7014,bg=#212733]"
+            tab_active_fullscreen   "#[fg=#9399B2,bg=#ED7014,bold,italic] {index} {name} [] "
+            tab_active_sync         "#[fg=#9399B2,bg=#ED7014,bold,italic] {index} {name} <> "
+
+            datetime          "#[fg=#000000,bg=#FDA172,bold] {format} "
+            datetime_format   "%b %d %Y %H:%M"
+            datetime_timezone "America/Los_Angeles"
+        }
+    }
+}
+
