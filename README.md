@@ -16,13 +16,9 @@ These are the following terminal tools that I have installed
 - [eza](https://github.com/eza-community/eza) : ls with colors and icons
 - [gum](https://github.com/charmbracelet/gum) : Tool for shell scripts
 
-## Extra scripts:
+#### Extra scripts:
 - [gum_ssh.sh](https://github.com/Brandhang34/dotfiles/tree/master/.ssh/gum_ssh.sh)
 - [aws_profile.sh](https://github.com/brandhang34/dotfiles/tree/master/.aws/aws_acc.sh)
-
-### [stow](https://www.gnu.org/software/stow/):
-I use stow to easily "copy" dotfiles to the machine. You can manually copy everything, 
-but I find it easier to create symlinks.
 
 ## Installation:
 First, clone dotfiles repo in your $HOME directory
@@ -31,7 +27,9 @@ $ git clone git@github.com:Brandhang34/dotfiles.git $HOME/dotfiles
 $ cd $HOME/dotfiles
 ```
 
-Then use GNU stow to create symlinks
+### [stow](https://www.gnu.org/software/stow/):
+I use stow to easily "copy" dotfiles to the machine. You can manually copy everything, 
+but I find it easier to create symlinks. Run the following command to create the symlinks
 ```
 $ stow .
 ```
