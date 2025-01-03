@@ -1,5 +1,9 @@
 # Add languages from here: https://github.com/helix-editor/helix/blob/master/languages.toml
 
+# helix-gpt (https://github.com/leona/helix-gpt?tab=readme-ov-file)
+[language-server.gpt]
+command = "helix-gpt"
+
 # Golang
 [[language]]
 name = "go"
@@ -10,7 +14,7 @@ roots = ["go.work", "go.mod"]
 auto-format = true
 comment-token = "//"
 block-comment-tokens = { start = "/*", end = "*/" }
-language-servers = [ "gopls", "golangci-lint-lsp" ]
+language-servers = [ "gopls", "golangci-lint-lsp", "gpt" ]
 indent = { tab-width = 4, unit = "\t" }
 
 [[grammar]]
@@ -25,7 +29,7 @@ file-types = ["templ"]
 roots = ["go.work", "go.mod"]
 comment-token = "//"
 indent = { tab-width = 2, unit = "  " }
-language-servers = [ "templ" ]
+language-servers = [ "templ", "gpt" ]
 auto-format = true
 
 [[grammar]]
@@ -39,7 +43,7 @@ scope = "source.yaml"
 file-types = ["yml", "yaml"]
 comment-token = "#"
 indent = { tab-width = 2, unit = "  " }
-language-servers = [ "yaml-language-server", "ansible-language-server" ]
+language-servers = [ "yaml-language-server", "ansible-language-server", "gpt" ]
 injection-regex = "yml|yaml"
 
 [[grammar]]
@@ -56,7 +60,7 @@ file-types = ["hcl", "tf", "nomad"]
 comment-token = "#"
 block-comment-tokens = { start = "/*", end = "*/" }
 indent = { tab-width = 2, unit = "  " }
-language-servers = [ "terraform-ls" ]
+language-servers = [ "terraform-ls", "gpt" ]
 auto-format = true
 
 [[grammar]]
@@ -72,8 +76,7 @@ file-types = ["py", "pyi", "py3", "pyw", "ptl", "rpy", "cpy", "ipy", "pyt", { gl
 shebangs = ["python"]
 roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
 comment-token = "#"
-language-servers = ["ruff", "jedi", "pylsp"]
-# TODO: pyls needs utf-8 offsets
+language-servers = ["ruff", "jedi", "pylsp", "gpt"]
 indent = { tab-width = 4, unit = "    " }
 
 [[grammar]]
@@ -134,7 +137,7 @@ file-types = [
 ]
 shebangs = ["sh", "bash", "dash", "zsh"]
 comment-token = "#"
-language-servers = [ "bash-language-server" ]
+language-servers = [ "bash-language-server", "gpt" ]
 indent = { tab-width = 2, unit = "  " }
 
 [[grammar]]
@@ -148,9 +151,17 @@ scope = "source.yaml"
 file-types = ["yml", "yaml"]
 comment-token = "#"
 indent = { tab-width = 2, unit = "  " }
-language-servers = [ "yaml-language-server", "ansible-language-server" ]
+language-servers = [ "yaml-language-server", "ansible-language-server", "gpt" ]
 injection-regex = "yml|yaml"
 
 [[grammar]]
 name = "yaml"
 source = { git = "https://github.com/ikatyang/tree-sitter-yaml", rev = "0e36bed171768908f331ff7dff9d956bae016efb" }
+
+[[language]]
+name = "markdown"
+language-servers = ["marksman", "mdpls", "gpt"]
+
+[language-server.mdpls]
+command = "/home/sushamae/.cargo/bin/mdpls"
+config = { markdown.preview.auto = true }

@@ -1,4 +1,4 @@
-theme = "ayu_mirage"
+theme = "onedark_transparent"
 
 [editor]
 line-number = "relative"
@@ -24,7 +24,6 @@ p = "paste_clipboard_before"
 y = "yank_main_selection_to_clipboard"
 
 [keys.normal.space.","]
-e = ":sh $HOME/.config/helix/helix-tmux.sh explorer"
-t = ":sh $HOME/.config/helix/helix-tmux.sh terminal"
-g = ":sh $HOME/.config/helix/helix-tmux.sh tgpt"
-
+e = ":sh $HOME/.config/helix/helix-zellij.sh explorer"
+t = ":sh $HOME/.config/helix/helix-zellij.sh terminal"
+g = ":sh $HOME/.config/helix/helix-zellij.sh tgpt"

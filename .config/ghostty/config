@@ -1,0 +1,17 @@
+theme = main-theme
+
+keybind = ctrl+z=close_surface
+# keybind = ctrl+d=new_split:right
+
+
+confirm-close-surface = false
+copy-on-select = clipboard
+cursor-style = block
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+gtk-adwaita = false
+gtk-single-instance = true
+scrollback-limit = 10000
+shell-integration = fish
+shell-integration-features = no-cursor,sudo

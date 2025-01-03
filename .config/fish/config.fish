@@ -9,9 +9,10 @@ set fish_greeting
 # source binaries
 starship init fish | source
 zoxide init fish | source
-
+source $HOME/.config/fish/env_variables.fish
 
 # Exports
+set -U fish_user_paths ~/.cargo/bin $fish_user_paths
 set -U fish_user_paths /usr/local/go/bin $fish_user_paths
 set -U fish_user_paths ~/go/bin $fish_user_paths
 set -U fish_user_paths ~/.local/bin $fish_user_paths
@@ -36,7 +37,7 @@ alias s='source ~/.config/fish/config.fish'
 alias e=exit
 
 alias a='sh ~/.ssh/gum_ssh.sh'
-alias awsacc='sh ~/.aws/aws_acc.sh'
+alias awsacc='source ~/.aws/aws_acc.sh'
 
 alias open='gnome-open'
 
