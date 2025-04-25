@@ -9,7 +9,6 @@ layout {
             format_left    "#[fg=black,bg=#FDA172,bold] {mode}"
             format_center  "{tabs}"
             format_right   "#[fg=#FDA172]{datetime}"
-            // format_space   "#[bg=#212733]"
 
             hide_frame_except_for_search "true"
 

@@ -21,6 +21,10 @@ indent = { tab-width = 4, unit = "\t" }
 name = "go"
 source = { git = "https://github.com/tree-sitter/tree-sitter-go", rev = "64457ea6b73ef5422ed1687178d4545c3e91334a" }
 
+[language-server.tailwindcss-ls]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+
 # Templ 
 [[language]]
 name = "templ"
@@ -29,8 +33,13 @@ file-types = ["templ"]
 roots = ["go.work", "go.mod"]
 comment-token = "//"
 indent = { tab-width = 2, unit = "  " }
-language-servers = [ "templ", "gpt" ]
+language-servers = [ "templ", "tailwindcss-ls" ]
 auto-format = true
+
+# CSS
+[[language]]
+name = "css"
+language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
 
 [[grammar]]
 name = "templ"
