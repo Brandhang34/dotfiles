@@ -5,7 +5,7 @@
 # making a selection, the ssh command will be executed.
 
 function getSSHConfigs() {
-  gum choose $(grep -P "^Host ([^*]+)$" "$HOME/.ssh/config" | sed 's/Host //') --selected.background "10" --cursor.foreground "10"
+  gum choose $(grep -P "^Host" $HOME/.ssh/config | awk '{ print $2 }') --selected.background "10" --cursor.foreground "10"
 }
 
 # Check if the ssh config file exists
