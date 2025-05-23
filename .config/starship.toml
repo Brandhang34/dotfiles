@@ -1,10 +1,11 @@
 format = """
 [](fg:bar_one)\
-$os\
-[](fg:bar_one bg:bar_three)\
 $username\
+[](fg:bar_one bg:bar_three)\
+$directory\
 [](fg:bar_three bg:bar_four)\
-$custom$directory\
+$git_branch\
+$git_status\
 [ ](fg:bar_four)\
 $fill\
 [ ](fg:bar_four)\
@@ -12,7 +13,7 @@ $cmd_duration\
 [](fg:bar_three bg:bar_four)\
 $status\
 [](fg:bar_one bg:bar_three)\
-$aws\
+$os$hostname\
 [](fg:bar_one)\
 \n [╰─ $character](fg:bar_one)
 """
@@ -39,7 +40,7 @@ min_time = 0
 format = '[ $duration ](fg:text_three bg:bar_four)'
 
 [username]
-format = '[  $user](fg:text_two bg:bar_three)'
+format = '[ $user](fg:text_one bg:bar_one)'
 disabled = false
 show_always = true
 
@@ -55,47 +56,28 @@ eu-west-1 = 'IR'
 default = 'Sushamae'
 PortfolioWebsite = 'Portfolio'
 
+[hostname]
+style = 'bg:bar_one fg:text_one'
+ssh_symbol = ' '
+ssh_only = false
+format = '[ $hostname$ssh_symbol]($style)'
+trim_at = '.companyname.com'
+disabled = false
+
 [os]
 style = 'bg:bar_one fg:text_one'
 format = '[$symbol]($style)'
 disabled = false
 
 [os.symbols]
-Alpine = ''
-Amazon = ''
-Android = ''
-Arch = '󰣇'
 CentOS = ''
 Debian = ''
-DragonFly = ''
-Emscripten = ''
-EndeavourOS = ''
 Fedora = ''
-FreeBSD = ''
-Garuda = '﯑'
-Gentoo = ''
-HardenedBSD = 'ﲊ'
-Illumos = ''
-Linux = "\uE712"
-Macos = "\uE711"
-Manjaro = ''
-Mariner = ''
-MidnightBSD = ''
-Mint = ''
-NetBSD = ''
+Linux = ""
+Macos = "󰀵"
 NixOS = ''
-OpenBSD = ''
-openSUSE = ''
-OracleLinux = ''
-Pop = ''
 Raspbian = ''
-Redhat = "\uE7BB"
-RedHatEnterprise = "\uE7BB"
-Redox = ''
-Solus = 'ﴱ'
-SUSE = ''
 Ubuntu = ''
-Unknown = ''
 Windows = ''
 
 [status]
@@ -111,26 +93,25 @@ map_symbol = true
 disabled = false
 
 [directory]
-read_only = " "
+read_only = " 󰏮"
 truncation_length = 1
 truncation_symbol = '…/'
 truncate_to_repo = false
 fish_style_pwd_dir_length = 1
-style = 'bold fg:text_three bg:bar_four'
-format = '[ $path$read_only ]($style)'
-
-[custom.home]
-when = ''' test '$HOME' = '$PWD' '''
-style = 'bold fg:text_three bg:bar_four'
-symbol = ' '
-
-[custom.folder]
-when = ''' test '$HOME' != '$PWD' '''
-style = 'bold fg:text_three bg:bar_four'
-symbol = ' '
+style = 'bold fg:text_two bg:bar_three'
+format = '[  $path$read_only]($style)'
 
 [directory.substitutions]
 'Documents' = '󰈙'
-'Downloads' = ' '
-'Music' = ' '
-'Pictures' = ' '
+'Downloads' = ''
+'Music' = ''
+'Pictures' = ''
+
+[git_branch]
+symbol = ""
+style = "fg:text_three bg:bar_four"
+format = '[ $symbol $branch]($style)'
+
+[git_status]
+style = "fg:text_three bg:bar_four"
+format = '[ $all_status$ahead_behind]($style)'

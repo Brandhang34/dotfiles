@@ -1,7 +1,4 @@
 # Launch Zellij on startup
-if status is-interactive
-    eval (zellij setup --generate-auto-start fish | string collect)
-end
 
 # Disable Welcome Prompt
 set fish_greeting
@@ -44,5 +41,3 @@ alias open='gnome-open'
 function take
     mkdir -p $argv && cd $argv
 end
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
