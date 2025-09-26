@@ -6,7 +6,6 @@ cursor-style = block
 font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
-gtk-adwaita = false
 gtk-single-instance = true
 scrollback-limit = 10000
 shell-integration = fish
